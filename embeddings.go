@@ -193,6 +193,7 @@ func (r EmbeddingRequestStrings) Convert() EmbeddingRequest {
 	return EmbeddingRequest{
 		Input:          r.Input,
 		Model:          r.Model,
+		Prompt:          r.Prompt,
 		User:           r.User,
 		EncodingFormat: r.EncodingFormat,
 		Dimensions:     r.Dimensions,
@@ -207,6 +208,8 @@ type EmbeddingRequestTokens struct {
 	// E.g.
 	//	"The food was delicious and the waiter..."
 	Input [][]int `json:"input"`
+
+	Prompt string `json:"prompt"`
 	// ID of the model to use. You can use the List models API to see all of your available models,
 	// or see our Model overview for descriptions of them.
 	Model EmbeddingModel `json:"model"`
@@ -224,6 +227,7 @@ type EmbeddingRequestTokens struct {
 func (r EmbeddingRequestTokens) Convert() EmbeddingRequest {
 	return EmbeddingRequest{
 		Input:          r.Input,
+		Prompt:          r.Prompt,
 		Model:          r.Model,
 		User:           r.User,
 		EncodingFormat: r.EncodingFormat,
