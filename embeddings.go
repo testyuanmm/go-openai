@@ -154,6 +154,7 @@ const (
 
 type EmbeddingRequest struct {
 	Input          any                     `json:"input"`
+	Prompt          string                 `json:"prompt"`
 	Model          EmbeddingModel          `json:"model"`
 	User           string                  `json:"user,omitempty"`
 	EncodingFormat EmbeddingEncodingFormat `json:"encoding_format,omitempty"`
